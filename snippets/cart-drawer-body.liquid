@@ -1,0 +1,82 @@
+{%- comment -%}
+  Shared drawer contents. Rendered both on page load and by the
+  `cart-drawer-content` section during Ajax refreshes.
+{%- endcomment -%}
+
+{%- if cart.item_count == 0 -%}
+  <div class="drawer__body">
+    <div class="drawer__empty">
+      <p class="h3">{{ 'cart.general.empty' | t }}</p>
+      <a href="{{ routes.all_products_collection_url }}" class="btn btn--sm" style="margin-top:16px">
+        {{ 'cart.general.continue_shopping' | t }}
+      </a>
+    </div>
+  </div>
+{%- else -%}
+  <div class="drawer__body">
+    {%- for line in cart.items -%}
+      <div class="drawer__line">
+        <a href="{{ line.url }}" class="drawer__line-image">
+          {%- if line.image -%}
+            <img
+              src="{{ line.image | image_url: width: 160 }}"
+              alt="{{ line.title | escape }}"
+              loading="lazy"
+              width="160"
+              height="160"
+            >
+          {%- endif -%}
+        </a>
+
+        <div>
+          <p class="drawer__line-title">{{ line.product.title }}</p>
+          {%- unless line.variant.title contains 'Default' -%}
+            <p class="drawer__line-variant">{{ line.variant.title }}</p>
+          {%- endunless -%}
+
+          <div class="drawer__qty">
+            <button
+              type="button"
+              data-line-change
+              data-line="{{ forloop.index }}"
+              data-quantity="{{ line.quantity | minus: 1 }}"
+              aria-label="Decrease quantity of {{ line.product.title | escape }}"
+            >&minus;</button>
+            <span>{{ line.quantity }}</span>
+            <button
+              type="button"
+              data-line-change
+              data-line="{{ forloop.index }}"
+              data-quantity="{{ line.quantity | plus: 1 }}"
+              aria-label="Increase quantity of {{ line.product.title | escape }}"
+            >+</button>
+          </div>
+        </div>
+
+        <div class="drawer__line-right">
+          <span class="drawer__line-price">{{ line.final_line_price | money }}</span>
+          <button
+            type="button"
+            class="drawer__remove"
+            data-line-change
+            data-line="{{ forloop.index }}"
+            data-quantity="0"
+          >{{ 'cart.general.remove' | t }}</button>
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+
+  <div class="drawer__footer">
+    <div class="drawer__total">
+      <span>{{ 'cart.general.subtotal' | t }}</span>
+      <span>{{ cart.total_price | money }}</span>
+    </div>
+    <p class="fine-print">{{ 'cart.general.taxes_note' | t }}</p>
+    <form action="{{ routes.cart_url }}" method="post">
+      <button type="submit" name="checkout" class="btn btn--block">
+        {{ 'cart.general.checkout' | t }}
+      </button>
+    </form>
+  </div>
+{%- endif -%}

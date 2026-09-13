@@ -1,0 +1,17 @@
+{
+  "name": "Header",
+  "type": "header",
+  "sections": {
+    "header": {
+      "type": "header",
+      "settings": {
+        "logo_height": 340,
+        "menu": "main-menu",
+        "cta_label": "Shop"
+      }
+    }
+  },
+  "order": [
+    "header"
+  ]
+}

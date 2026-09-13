@@ -1,0 +1,153 @@
+<style>
+  #howto-{{ section.id }} {
+    background: {{ section.settings.background }};
+    color: {{ section.settings.text_color }};
+    padding: clamp(52px, 7vw, 96px) 0;
+  }
+
+  #howto-{{ section.id }} .howto__head {
+    text-align: center;
+    max-width: 62ch;
+    margin: 0 auto clamp(32px, 5vw, 56px);
+    display: grid;
+    gap: 14px;
+    justify-items: center;
+  }
+
+  #howto-{{ section.id }} .howto__grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr;
+    counter-reset: step;
+  }
+
+  @media screen and (min-width: 750px) {
+    #howto-{{ section.id }} .howto__grid {
+      grid-template-columns: repeat({{ section.blocks.size | at_most: 4 }}, 1fr);
+    }
+  }
+
+  #howto-{{ section.id }} .howto__step {
+    border: 1px solid var(--cream-deep);
+    background: #fff;
+    color: var(--ink);
+    padding: 24px 22px;
+    position: relative;
+  }
+
+  #howto-{{ section.id }} .howto__num {
+    counter-increment: step;
+    position: absolute;
+    top: -18px;
+    left: 18px;
+    width: 40px;
+    height: 40px;
+    background: var(--red);
+    color: #fff;
+    border: 1px solid var(--cream-deep);
+    display: grid;
+    place-items: center;
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 1.3rem;
+  }
+
+  #howto-{{ section.id }} .howto__num::before {
+    content: counter(step);
+  }
+
+  #howto-{{ section.id }} .howto__step-title {
+    font-family: var(--font-display);
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 1.35rem;
+    line-height: 1;
+    margin: 14px 0 10px;
+  }
+
+  #howto-{{ section.id }} .howto__step-body {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  #howto-{{ section.id }} .howto__cta {
+    margin-top: clamp(32px, 4vw, 48px);
+    display: flex;
+    justify-content: center;
+  }
+</style>
+
+<section id="howto-{{ section.id }}" aria-labelledby="howto-heading-{{ section.id }}">
+  <div class="wrap">
+    <div class="howto__head">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="eyebrow eyebrow--gold">{{ section.settings.eyebrow | escape }}</span>
+      {%- endif -%}
+      <h2 class="h1" id="howto-heading-{{ section.id }}">{{ section.settings.heading }}</h2>
+      {%- if section.settings.body != blank -%}
+        <p class="lede">{{ section.settings.body }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="howto__grid">
+      {%- for block in section.blocks -%}
+        <div class="howto__step" data-reveal style="transition-delay: {{ forloop.index0 | times: 80 }}ms" {{ block.shopify_attributes }}>
+          <span class="howto__num" aria-hidden="true"></span>
+          <h3 class="howto__step-title">{{ block.settings.title | escape }}</h3>
+          <p class="howto__step-body">{{ block.settings.body }}</p>
+        </div>
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.cta_label != blank -%}
+      <div class="howto__cta">
+        <a href="{{ section.settings.cta_link | default: routes.all_products_collection_url }}" class="btn">
+          {{ section.settings.cta_label | escape }}
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "How to take it",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "How to take it" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Take it. Eat. Live your life." },
+    {
+      "type": "textarea",
+      "id": "body",
+      "label": "Body",
+      "default": "Cheat Shot is a dietary supplement, not a medication. It complements, but does not replace, balanced eating and healthy habits.*"
+    },
+    { "type": "text", "id": "cta_label", "label": "Button label", "default": "Shop Cheat Shot" },
+    { "type": "url", "id": "cta_link", "label": "Button link" },
+    { "type": "color", "id": "background", "label": "Background", "default": "#FFCC33" },
+    { "type": "color", "id": "text_color", "label": "Text", "default": "#1A1A1A" }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "limit": 4,
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title" },
+        { "type": "textarea", "id": "body", "label": "Body" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "How to take it",
+      "blocks": [
+        { "type": "step", "settings": { "title": "Pick your format", "body": "Capsules to keep in your bag, or powder for your shaker." } },
+        { "type": "step", "settings": { "title": "Two formulas, two jobs", "body": "Powder daily as your foundation; capsules before a higher-carb meal, as directed on the label." } },
+        { "type": "step", "settings": { "title": "Eat your meal", "body": "No tracking, no restriction, no ritual to maintain." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

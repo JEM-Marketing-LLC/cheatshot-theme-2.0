@@ -1,0 +1,74 @@
+<style>
+  .collections-list {
+    padding: clamp(32px, 5vw, 64px) 0 clamp(48px, 6vw, 88px);
+  }
+
+  .collections-list__grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr;
+    margin-top: 32px;
+  }
+
+  @media screen and (min-width: 700px) {
+    .collections-list__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .collection-tile {
+    display: block;
+    border: 1px solid var(--cream-deep);
+    background: #fff;
+    box-shadow: var(--shadow-hard);
+    padding: 0 0 18px;
+  }
+
+  .collection-tile img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-bottom: 1px solid var(--cream-deep);
+  }
+
+  .collection-tile__title {
+    font-family: var(--font-display);
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    line-height: 1;
+    margin: 16px 18px 0;
+  }
+</style>
+
+<section class="collections-list">
+  <div class="wrap">
+    <span class="eyebrow">Shop</span>
+    <h1 class="h1" style="margin-top:12px">{{ 'general.collections.title' | t }}</h1>
+
+    <div class="collections-list__grid">
+      {%- for collection in collections -%}
+        <a href="{{ collection.url }}" class="collection-tile">
+          {%- if collection.featured_image -%}
+            <img
+              src="{{ collection.featured_image | image_url: width: 700 }}"
+              alt="{{ collection.title | escape }}"
+              loading="lazy"
+              width="700"
+              height="525"
+            >
+          {%- endif -%}
+          <p class="collection-tile__title">{{ collection.title }}</p>
+        </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Collections list",
+  "tag": "section",
+  "settings": []
+}
+{% endschema %}

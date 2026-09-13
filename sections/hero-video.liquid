@@ -1,0 +1,417 @@
+{%- comment -%}
+  Homepage hero — mirrors the live cheatshot.com hero:
+  yellow panel with dotted pattern, copy on the left, vertical 9:16 founder
+  video on the right, tilted bottle cut-out and rating chip over the video.
+{%- endcomment -%}
+
+<style>
+  #hero-{{ section.id }} {
+    background: {{ section.settings.copy_background }};
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+
+  @media screen and (min-width: 1000px) {
+    #hero-{{ section.id }} {
+      min-height: 65vh;
+    }
+  }
+
+  #hero-{{ section.id }} .hero__pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.06;
+    background-image: radial-gradient(var(--ink) 1.4px, transparent 1.4px);
+    background-size: 30px 30px;
+    pointer-events: none;
+  }
+
+  #hero-{{ section.id }} .hero__wrap {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+  }
+
+  #hero-{{ section.id }} .hero__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(20px, 3vw, 32px);
+    align-items: center;
+    padding: clamp(20px, 3vw, 40px) 0 0;
+  }
+
+  @media screen and (min-width: 1000px) {
+    #hero-{{ section.id }} .hero__grid {
+      grid-template-columns: 1fr 1fr;
+      padding-bottom: clamp(24px, 3vw, 40px);
+    }
+  }
+
+  #hero-{{ section.id }} .hero__copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  #hero-{{ section.id }} .hero__title {
+    font-family: var(--font-display);
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: clamp(56px, 8vw, 100px);
+    line-height: 0.88;
+    letter-spacing: -0.02em;
+    margin: 0;
+    color: {{ section.settings.heading_color }};
+  }
+
+  #hero-{{ section.id }} .hero__lede {
+    font-size: 17px;
+    line-height: 1.55;
+    font-weight: 500;
+    max-width: 400px;
+    margin: 0;
+    color: {{ section.settings.heading_color }};
+    opacity: 0.85;
+  }
+
+  #hero-{{ section.id }} .hero__disclaimer {
+    font-size: 11px;
+    line-height: 1.5;
+    font-weight: 500;
+    margin: 4px 0 0;
+    max-width: 46ch;
+    color: {{ section.settings.heading_color }};
+    opacity: 0.6;
+  }
+
+  #hero-{{ section.id }} .hero__media {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  @media screen and (min-width: 1000px) {
+    #hero-{{ section.id }} .hero__media {
+      justify-content: flex-end;
+    }
+  }
+
+  #hero-{{ section.id }} .hero__glow {
+    position: absolute;
+    top: 25%;
+    right: 8%;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    filter: blur(60px);
+    pointer-events: none;
+  }
+
+  #hero-{{ section.id }} .hero__stage {
+    position: relative;
+    z-index: 1;
+    width: 82%;
+    max-width: 360px;
+  }
+
+  @media screen and (min-width: 1000px) {
+    #hero-{{ section.id }} .hero__stage {
+      max-width: 420px;
+    }
+  }
+
+  #hero-{{ section.id }} .hero__video,
+  #hero-{{ section.id }} .hero__poster {
+    display: block;
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    object-fit: cover;
+    border-radius: 16px;
+    background: var(--ink);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+  }
+
+  #hero-{{ section.id }} .hero__bottle {
+    position: absolute;
+    z-index: 3;
+    bottom: 8px;
+    left: -32px;
+    width: 140px;
+    aspect-ratio: 1;
+    transform: rotate(-12deg);
+    transition: transform 0.5s ease;
+  }
+
+  #hero-{{ section.id }} .hero__bottle:hover {
+    transform: rotate(0deg);
+  }
+
+  #hero-{{ section.id }} .hero__bottle img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transform: scale(1.1);
+    filter: drop-shadow(0 20px 24px rgba(0, 0, 0, 0.3));
+  }
+
+  @media screen and (min-width: 750px) {
+    #hero-{{ section.id }} .hero__bottle {
+      width: 170px;
+      bottom: 12px;
+      left: -40px;
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    #hero-{{ section.id }} .hero__bottle {
+      width: 200px;
+      bottom: -24px;
+      left: -32px;
+    }
+  }
+
+  #hero-{{ section.id }} .hero__rating {
+    position: absolute;
+    z-index: 3;
+    bottom: 12px;
+    right: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(6px);
+    border-radius: 12px;
+    padding: 8px 12px;
+    box-shadow: 0 18px 30px rgba(0, 0, 0, 0.18);
+    transition: transform 0.3s ease;
+  }
+
+  #hero-{{ section.id }} .hero__rating:hover {
+    transform: scale(1.05);
+  }
+
+  @media screen and (min-width: 1000px) {
+    #hero-{{ section.id }} .hero__rating {
+      bottom: -16px;
+      right: -32px;
+    }
+  }
+
+  #hero-{{ section.id }} .hero__rating-value {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 17px;
+    color: var(--ink);
+  }
+
+  #hero-{{ section.id }} .hero__rating svg {
+    width: 16px;
+    height: 16px;
+    fill: var(--gold);
+  }
+</style>
+
+<section id="hero-{{ section.id }}" aria-label="{{ section.settings.heading | strip_html | escape }}">
+  <div class="hero__pattern" aria-hidden="true"></div>
+
+  <div class="wrap hero__wrap">
+    <div class="hero__grid">
+      <div class="hero__copy">
+        {%- if section.settings.eyebrow != blank -%}
+          <span class="eyebrow">{{ section.settings.eyebrow | escape }}</span>
+        {%- endif -%}
+
+        <h1 class="hero__title" id="hero-heading-{{ section.id }}">{{ section.settings.heading }}</h1>
+
+        {%- if section.settings.body != blank -%}
+          <p class="hero__lede">{{ section.settings.body }}</p>
+        {%- endif -%}
+
+        {%- if section.settings.cta_label != blank -%}
+          <a
+            href="{{ section.settings.cta_link | default: routes.all_products_collection_url }}"
+            class="btn"
+            style="margin-top:8px"
+          >{{ section.settings.cta_label | escape }}</a>
+        {%- endif -%}
+
+        {%- if section.settings.show_disclaimer and settings.fda_disclaimer != blank -%}
+          <p class="hero__disclaimer">{{ settings.fda_disclaimer }}</p>
+        {%- endif -%}
+      </div>
+
+      <div class="hero__media">
+        <div class="hero__glow" aria-hidden="true"></div>
+
+        <div class="hero__stage">
+          {%- assign mp4_src = section.settings.video_mp4_url -%}
+          {%- if section.settings.poster != blank -%}
+            {%- assign poster_src = section.settings.poster | image_url: width: 800 -%}
+          {%- else -%}
+            {%- assign poster_src = 'hero-founder-v2-poster.jpg' | asset_url -%}
+          {%- endif -%}
+
+          {%- if section.settings.video != blank -%}
+            {{
+              section.settings.video
+              | video_tag:
+                image_size: '800x',
+                autoplay: true,
+                loop: true,
+                muted: true,
+                controls: true,
+                playsinline: true,
+                preload: 'metadata',
+                class: 'hero__video'
+            }}
+          {%- elsif mp4_src != blank -%}
+            <video
+              class="hero__video"
+              src="{{ mp4_src }}"
+              poster="{{ poster_src }}"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              preload="metadata"
+              aria-label="{{ section.settings.video_alt | default: 'Cheat Shot founder explaining the ingredients' | escape }}"
+            ></video>
+          {%- else -%}
+            <img
+              class="hero__poster"
+              src="{{ poster_src }}"
+              alt="{{ section.settings.heading | strip_html | escape }}"
+              width="720"
+              height="1280"
+              fetchpriority="high"
+            >
+          {%- endif -%}
+
+          {%- if section.settings.show_bottle -%}
+            <a
+              href="{{ section.settings.bottle_link | default: routes.all_products_collection_url }}"
+              class="hero__bottle"
+              aria-label="{{ section.settings.bottle_alt | default: 'Shop Cheat Shot' | escape }}"
+            >
+              {%- if section.settings.bottle_image != blank -%}
+                <img
+                  src="{{ section.settings.bottle_image | image_url: width: 500 }}"
+                  alt="{{ section.settings.bottle_alt | default: 'Cheat Shot capsules bottle' | escape }}"
+                  width="500"
+                  height="500"
+                >
+              {%- else -%}
+                <img
+                  src="{{ 'bottle-tall.webp' | asset_url }}"
+                  alt="{{ section.settings.bottle_alt | default: 'Cheat Shot capsules bottle' | escape }}"
+                  width="500"
+                  height="500"
+                >
+              {%- endif -%}
+            </a>
+          {%- endif -%}
+
+          {%- if section.settings.rating_value != blank -%}
+            <a
+              href="{{ section.settings.rating_link | default: routes.all_products_collection_url }}"
+              class="hero__rating"
+              aria-label="{{ 'Read customer reviews' }}"
+            >
+              <span class="hero__rating-value">{{ section.settings.rating_value | escape }}</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z"/>
+              </svg>
+            </a>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero video",
+  "tag": "section",
+  "class": "section-hero-video",
+  "settings": [
+    { "type": "header", "content": "Copy" },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Everyday support for balanced routines"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Balanced doesn't mean perfect."
+    },
+    {
+      "type": "textarea",
+      "id": "body",
+      "label": "Body",
+      "default": "Cheat Shot is a dietary supplement available in capsule and powder formats. It is formulated to support normal glucose metabolism and digestive comfort as part of a balanced diet and active lifestyle.*"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_disclaimer",
+      "label": "Show FDA disclaimer",
+      "default": true
+    },
+    { "type": "header", "content": "Button" },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Button label",
+      "default": "Try Cheat Shot"
+    },
+    { "type": "url", "id": "cta_link", "label": "Button link" },
+    { "type": "header", "content": "Vertical video" },
+    {
+      "type": "paragraph",
+      "content": "Upload the vertical (9:16) founder video to Shopify and select it here. Until then the direct MP4 URL below is used."
+    },
+    { "type": "video", "id": "video", "label": "Video (uploaded to Shopify)" },
+    {
+      "type": "text",
+      "id": "video_mp4_url",
+      "label": "Or direct MP4 URL",
+      "default": "https://cheatshot.com/__l5e/assets-v1/4e11d4bd-39c3-4c20-ae56-02f95938c23b/hero-founder-v2.mp4",
+      "info": "Fallback founder video. Replace after uploading the video to Shopify Files."
+    },
+    { "type": "image_picker", "id": "poster", "label": "Poster image" },
+    {
+      "type": "text",
+      "id": "video_alt",
+      "label": "Video description",
+      "default": "Cheat Shot founder explaining the ingredients"
+    },
+    { "type": "header", "content": "Bottle cut-out" },
+    { "type": "checkbox", "id": "show_bottle", "label": "Show tilted bottle", "default": true },
+    { "type": "image_picker", "id": "bottle_image", "label": "Bottle image" },
+    { "type": "text", "id": "bottle_alt", "label": "Bottle alt text", "default": "Cheat Shot capsules bottle" },
+    { "type": "url", "id": "bottle_link", "label": "Bottle link" },
+    { "type": "header", "content": "Rating chip" },
+    {
+      "type": "text",
+      "id": "rating_value",
+      "label": "Rating value",
+      "default": "5.0",
+      "info": "Leave blank to hide. Only publish a rating you can back up with real reviews."
+    },
+    { "type": "url", "id": "rating_link", "label": "Rating link" },
+    { "type": "header", "content": "Styling" },
+    { "type": "color", "id": "copy_background", "label": "Background", "default": "#FFCC33" },
+    { "type": "color", "id": "heading_color", "label": "Text", "default": "#1A1A1A" }
+  ],
+  "presets": [{ "name": "Hero video" }]
+}
+{% endschema %}

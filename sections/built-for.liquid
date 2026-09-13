@@ -1,0 +1,128 @@
+{%- comment -%}"Built for the way you eat." — three lifestyle cards.{%- endcomment -%}
+<style>
+  #builtfor-{{ section.id }} {
+    background: {{ section.settings.background }};
+    padding: clamp(56px, 8vw, 104px) 0;
+  }
+
+  #builtfor-{{ section.id }} .builtfor__head {
+    text-align: center;
+    margin-bottom: clamp(36px, 5vw, 56px);
+  }
+
+  #builtfor-{{ section.id }} .builtfor__title {
+    font-family: var(--font-display);
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: clamp(32px, 4.5vw, 52px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+
+  #builtfor-{{ section.id }} .builtfor__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  @media screen and (min-width: 750px) {
+    #builtfor-{{ section.id }} .builtfor__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  #builtfor-{{ section.id }} .builtfor__card {
+    background: #fff;
+    border: 1px solid var(--cream-deep);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+
+  #builtfor-{{ section.id }} .builtfor__card:hover {
+    transform: translateY(-4px);
+  }
+
+  #builtfor-{{ section.id }} .builtfor__media {
+    aspect-ratio: 4 / 5;
+    background: var(--cream-deep);
+    overflow: hidden;
+  }
+
+  #builtfor-{{ section.id }} .builtfor__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  #builtfor-{{ section.id }} .builtfor__body {
+    padding: 24px;
+  }
+
+  #builtfor-{{ section.id }} .builtfor__body h3 {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    margin: 0 0 6px;
+  }
+
+  #builtfor-{{ section.id }} .builtfor__body p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink-mid);
+    margin: 0;
+  }
+</style>
+
+<section id="builtfor-{{ section.id }}" aria-labelledby="builtfor-h2-{{ section.id }}">
+  <div class="wrap">
+    <div class="builtfor__head">
+      <h2 class="builtfor__title" id="builtfor-h2-{{ section.id }}">{{ section.settings.heading }}</h2>
+    </div>
+    <div class="builtfor__grid">
+      {%- for block in section.blocks -%}
+        <article class="builtfor__card" data-reveal style="transition-delay:{{ forloop.index0 | times: 70 }}ms" {{ block.shopify_attributes }}>
+          <div class="builtfor__media">
+            {%- if block.settings.image != blank -%}
+              {{ block.settings.image | image_url: width: 800 | image_tag: loading: 'lazy', alt: block.settings.label }}
+            {%- elsif block.settings.fallback_asset != blank -%}
+              <img src="{{ block.settings.fallback_asset | asset_url }}" alt="{{ block.settings.label | escape }}" loading="lazy" width="800" height="1000">
+            {%- endif -%}
+          </div>
+          <div class="builtfor__body">
+            <h3>{{ block.settings.label | escape }}</h3>
+            <p>{{ block.settings.body | escape }}</p>
+          </div>
+        </article>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Built for",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Built for the way you eat." },
+    { "type": "color", "id": "background", "label": "Background", "default": "#FFFFFF" }
+  ],
+  "blocks": [
+    {
+      "type": "person",
+      "name": "Person",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "fallback_asset", "label": "Fallback asset filename" },
+        { "type": "text", "id": "label", "label": "Label", "default": "The athlete" },
+        { "type": "textarea", "id": "body", "label": "Body" }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [{ "name": "Built for" }]
+}
+{% endschema %}

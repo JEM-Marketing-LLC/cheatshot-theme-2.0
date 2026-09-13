@@ -1,0 +1,57 @@
+<style>
+  .page-main {
+    padding: clamp(32px, 5vw, 64px) 0 clamp(48px, 6vw, 88px);
+  }
+
+  .page-main__inner {
+    max-width: 760px;
+  }
+
+  .rte :is(h2, h3) {
+    font-family: var(--font-display);
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1;
+    margin: 32px 0 12px;
+  }
+
+  .rte h2 {
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+  }
+
+  .rte h3 {
+    font-size: clamp(1.3rem, 2vw, 1.6rem);
+  }
+
+  .rte p,
+  .rte ul,
+  .rte ol {
+    margin: 0 0 16px;
+  }
+
+  .rte a {
+    color: var(--red);
+    text-decoration: underline;
+    font-weight: 600;
+  }
+
+  .rte img {
+    border: 1px solid var(--cream-deep);
+    margin: 20px 0;
+  }
+</style>
+
+<section class="page-main">
+  <div class="wrap page-main__inner">
+    <h1 class="h1" style="margin-bottom:24px">{{ page.title }}</h1>
+    <div class="rte">{{ page.content }}</div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Page content",
+  "tag": "section",
+  "settings": []
+}
+{% endschema %}

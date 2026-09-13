@@ -1,0 +1,124 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "eyebrow": "Two formulas. Two jobs.",
+        "columns": 3,
+        "show_description": true
+      }
+    },
+    "lineup": {
+      "type": "lineup",
+      "blocks": {
+        "single": {
+          "type": "item",
+          "settings": {
+            "product": "cheat-shot-capsules",
+            "title": "Single Bottle",
+            "price": "$37.99",
+            "body": "30 doses. For the cheat meals.",
+            "cta_label": "Shop Single",
+            "fallback_asset": "bottle-front.webp",
+            "primary": false
+          }
+        },
+        "bundle": {
+          "type": "item",
+          "settings": {
+            "title": "Starter Bundle",
+            "price": "$64.99",
+            "body": "Capsules + Powder. Save $17.99 vs buying separately.",
+            "cta_label": "Shop Bundle",
+            "badge": "Best value",
+            "fallback_asset": "bundle-hero.webp",
+            "primary": true
+          }
+        },
+        "powder": {
+          "type": "item",
+          "settings": {
+            "product": "cheat-shot-powder-post-meal-recovery",
+            "title": "Powder",
+            "price": "$44.99",
+            "body": "30 daily doses. Your everyday foundation.",
+            "cta_label": "Shop Powder",
+            "fallback_asset": "powder-front.webp",
+            "primary": false
+          }
+        }
+      },
+      "block_order": ["single", "bundle", "powder"],
+      "settings": {
+        "heading": "The Lineup",
+        "background": "#FBF7EC"
+      }
+    },
+    "ingredients_teaser": {
+      "type": "ingredients-teaser",
+      "blocks": {
+        "i1": {
+          "type": "ingredient",
+          "settings": { "name": "Chromium Picolinate", "dose": "500MCG" }
+        },
+        "i2": {
+          "type": "ingredient",
+          "settings": { "name": "Cinnamon Bark Extract", "dose": "200MG" }
+        },
+        "i3": {
+          "type": "ingredient",
+          "settings": { "name": "Banaba Leaf Extract", "dose": "120MG" }
+        }
+      },
+      "block_order": ["i1", "i2", "i3"],
+      "settings": {
+        "heading": "What's actually inside.",
+        "body": "No proprietary blends. Every amount on the label.",
+        "cta_label": "See every ingredient in both formulas →",
+        "background": "#FFCC33"
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "q1": {
+          "type": "item",
+          "settings": {
+            "question": "Powder or capsules — which should I start with?",
+            "answer": "<p>Two different formulas with two different jobs. The powder is the daily foundation for metabolic and antioxidant support. The capsules are for higher-carb meal occasions.*</p>"
+          }
+        },
+        "q2": {
+          "type": "item",
+          "settings": {
+            "question": "What's in the starter bundle?",
+            "answer": "<p>Capsules plus powder together — the daily foundation and the cheat meal support, and you save $17.99 vs buying them separately.</p>"
+          }
+        },
+        "q3": {
+          "type": "item",
+          "settings": {
+            "question": "How do I take each one?",
+            "answer": "<p>Powder: mix one scoop into your drink daily. Capsules: take one about 15 minutes before a higher-carb meal — with or shortly after the meal also works. Take each as directed on the label.*</p>"
+          }
+        }
+      },
+      "block_order": ["q1", "q2", "q3"],
+      "settings": {
+        "eyebrow": "Questions",
+        "heading": "Choosing a formula.",
+        "exclusive": true,
+        "background": "#FFFFFF"
+      }
+    },
+    "shop_cta": {
+      "type": "shop-cta",
+      "settings": {
+        "heading": "Ready to take your shot?",
+        "cta_label": "Shop glucose support supplements →",
+        "background": "#EE2C22"
+      }
+    }
+  },
+  "order": ["main", "lineup", "ingredients_teaser", "faq", "shop_cta"]
+}
