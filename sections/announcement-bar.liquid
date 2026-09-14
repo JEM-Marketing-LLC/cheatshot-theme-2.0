@@ -1,0 +1,51 @@
+{%- if section.settings.text != blank -%}
+  <div
+    class="announcement"
+    style="background: {{ section.settings.background }}; color: {{ section.settings.text_color }};"
+  >
+    <div class="wrap announcement__inner">
+      {%- if section.settings.link != blank -%}
+        <a href="{{ section.settings.link }}">{{ section.settings.text | escape }}</a>
+      {%- else -%}
+        <span>{{ section.settings.text | escape }}</span>
+      {%- endif -%}
+    </div>
+  </div>
+
+  <style>
+    .announcement {
+      font-family: var(--font-display);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 12px;
+    }
+
+    .announcement__inner {
+      padding: 9px 0;
+      text-align: center;
+    }
+
+    .announcement a {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+  </style>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Announcement bar",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text",
+      "default": "Two formulas, two jobs — 30-day supply in every bottle"
+    },
+    { "type": "url", "id": "link", "label": "Link" },
+    { "type": "color", "id": "background", "label": "Background", "default": "#1A1A1A" },
+    { "type": "color", "id": "text_color", "label": "Text", "default": "#FDFCF8" }
+  ]
+}
+{% endschema %}

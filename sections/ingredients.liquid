@@ -1,0 +1,179 @@
+<style>
+  #ingredients-{{ section.id }} {
+    background: {{ section.settings.background }};
+    padding: clamp(52px, 7vw, 96px) 0;
+  }
+
+  #ingredients-{{ section.id }} .ing__head {
+    display: grid;
+    gap: 14px;
+    max-width: 62ch;
+    margin-bottom: clamp(26px, 4vw, 44px);
+  }
+
+  #ingredients-{{ section.id }} .ing__grid {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: 1fr;
+  }
+
+  @media screen and (min-width: 620px) {
+    #ingredients-{{ section.id }} .ing__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (min-width: 980px) {
+    #ingredients-{{ section.id }} .ing__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  #ingredients-{{ section.id }} details {
+    border: 1px solid var(--cream-deep);
+    background: #fff;
+    padding: 18px 20px;
+  }
+
+  #ingredients-{{ section.id }} summary {
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  #ingredients-{{ section.id }} summary::-webkit-details-marker {
+    display: none;
+  }
+
+  #ingredients-{{ section.id }} .ing__name {
+    font-family: var(--font-display);
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    line-height: 1;
+  }
+
+  #ingredients-{{ section.id }} .ing__dose {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--red);
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+  }
+
+  #ingredients-{{ section.id }} .ing__body {
+    margin: 14px 0 0;
+    font-size: 15px;
+    line-height: 1.5;
+    border-top: 2px solid rgba(26, 26, 26, 0.12);
+    padding-top: 12px;
+  }
+
+  #ingredients-{{ section.id }} .ing__hint {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.5;
+    margin-top: 10px;
+  }
+
+  #ingredients-{{ section.id }} details[open] .ing__hint {
+    display: none;
+  }
+</style>
+
+<section id="ingredients-{{ section.id }}" aria-labelledby="ing-heading-{{ section.id }}">
+  <div class="wrap">
+    <div class="ing__head">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="eyebrow">{{ section.settings.eyebrow | escape }}</span>
+      {%- endif -%}
+      <h2 class="h1" id="ing-heading-{{ section.id }}">{{ section.settings.heading }}</h2>
+      {%- if section.settings.body != blank -%}
+        <p class="lede">{{ section.settings.body }}</p>
+      {%- endif -%}
+    </div>
+
+    <disclosure-list class="ing__grid">
+      {%- for block in section.blocks -%}
+        <details {{ block.shopify_attributes }}>
+          <summary>
+            <span class="ing__name">{{ block.settings.name | escape }}</span>
+            {%- if block.settings.dose != blank -%}
+              <span class="ing__dose">{{ block.settings.dose | escape }}</span>
+            {%- endif -%}
+          </summary>
+          {%- if block.settings.description != blank -%}
+            <p class="ing__body">{{ block.settings.description }}</p>
+          {%- endif -%}
+          <p class="ing__hint">Tap to learn more</p>
+        </details>
+      {%- endfor -%}
+    </disclosure-list>
+
+    {%- if settings.fda_disclaimer != blank -%}
+      <p class="fine-print" style="margin-top:28px">{{ settings.fda_disclaimer }}</p>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Ingredients",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Full transparency"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "What's inside."
+    },
+    {
+      "type": "textarea",
+      "id": "body",
+      "label": "Body",
+      "default": "Every ingredient, every dose. No proprietary blends."
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background",
+      "default": "#F6F3EA"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "ingredient",
+      "name": "Ingredient",
+      "settings": [
+        { "type": "text", "id": "name", "label": "Name" },
+        { "type": "text", "id": "dose", "label": "Dose" },
+        { "type": "textarea", "id": "description", "label": "Description" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ingredients",
+      "blocks": [
+        { "type": "ingredient", "settings": { "name": "Chromium Picolinate", "dose": "500MCG" } },
+        { "type": "ingredient", "settings": { "name": "Cinnamon Bark Extract", "dose": "200MG" } },
+        { "type": "ingredient", "settings": { "name": "Banaba Leaf Extract", "dose": "120MG" } },
+        { "type": "ingredient", "settings": { "name": "Gymnema Sylvestre", "dose": "120MG" } },
+        { "type": "ingredient", "settings": { "name": "Bitter Melon Extract", "dose": "100MG" } },
+        { "type": "ingredient", "settings": { "name": "DigesSEB Enzymes", "dose": "25MG" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

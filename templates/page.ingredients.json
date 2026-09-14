@@ -1,0 +1,209 @@
+{
+  "sections": {
+    "hero": {
+      "type": "ingredients-hero",
+      "settings": {
+        "badge": "🔬 What's actually in it",
+        "heading": "Cheat Shot Ingredients and Supplement Facts",
+        "body": "No proprietary blends. No fairy-dust doses. Every milligram is right there on the bottle, dosed at the levels used in published research.",
+        "fallback_asset": "ingredients-hero.webp",
+        "image_alt": "Cheat Shot bottle showing supplement facts",
+        "background": "#FFCC33"
+      }
+    },
+    "capsules": {
+      "type": "ingredient-list",
+      "blocks": {
+        "chromium": {
+          "type": "ingredient",
+          "settings": {
+            "emoji": "⚡",
+            "name": "Chromium Picolinate",
+            "dose": "500 mcg",
+            "tagline": "The glucose metabolism workhorse.",
+            "body": "An essential trace mineral that supports the action of insulin and healthy carbohydrate metabolism. Dosed at the level used in clinical research — not a sprinkle.*",
+            "source": "Highly bioavailable picolinate form."
+          }
+        },
+        "cinnamon": {
+          "type": "ingredient",
+          "settings": {
+            "emoji": "🍂",
+            "name": "Cinnamon Bark Extract",
+            "dose": "200 mg",
+            "tagline": "Old-school spice, real research.",
+            "body": "The lead ingredient in the capsules at 200mg of a 10:1 extract, studied for its role in supporting healthy glucose metabolism after meals.*",
+            "source": "Cinnamomum cassia bark, standardized extract."
+          }
+        },
+        "banaba": {
+          "type": "ingredient",
+          "settings": {
+            "emoji": "🍃",
+            "name": "Banaba Leaf Extract",
+            "dose": "120 mg",
+            "tagline": "The corosolic acid one.",
+            "body": "Banaba contains corosolic acid, studied for its role in supporting healthy glucose metabolism.*",
+            "source": "Lagerstroemia speciosa leaf, standardized to corosolic acid."
+          }
+        },
+        "gymnema": {
+          "type": "ingredient",
+          "settings": {
+            "emoji": "🌿",
+            "name": "Gymnema Sylvestre",
+            "dose": "120 mg",
+            "tagline": "The Ayurvedic classic.",
+            "body": "Used for centuries in traditional Ayurvedic practice, Gymnema is studied for its role in supporting healthy glucose metabolism.*",
+            "source": "Gymnema sylvestre leaf extract."
+          }
+        },
+        "bittermelon": {
+          "type": "ingredient",
+          "settings": {
+            "emoji": "🥒",
+            "name": "Bitter Melon Extract",
+            "dose": "100 mg",
+            "tagline": "Bitter on purpose.",
+            "body": "Bitter melon (Momordica charantia) is studied for its role in supporting healthy glucose metabolism after meals.*",
+            "source": "Momordica charantia fruit extract."
+          }
+        },
+        "vanadium": {
+          "type": "ingredient",
+          "settings": {
+            "emoji": "🧪",
+            "name": "Vanadium",
+            "dose": "50 mg",
+            "tagline": "The trace mineral most brands skip.",
+            "body": "From vanadyl sulfate. A trace mineral studied for its role in supporting normal carbohydrate metabolism.*",
+            "source": "From Vanadyl Sulfate."
+          }
+        },
+        "enzymes": {
+          "type": "ingredient",
+          "settings": {
+            "emoji": "🧬",
+            "name": "DigesSEB® Enzymes",
+            "dose": "25 mg",
+            "tagline": "Help your gut handle the spread.",
+            "body": "A blend of digestive enzymes (amylase, protease, lipase, cellulase, lactase) that support the breakdown of carbs, proteins, fats, fiber, and dairy.*",
+            "source": "DigesSEB® enzyme blend, multi-source."
+          }
+        }
+      },
+      "block_order": ["chromium", "cinnamon", "banaba", "gymnema", "bittermelon", "vanadium", "enzymes"],
+      "settings": {
+        "heading": "Cheat Shot Capsules",
+        "intro": "For cheat meal support. Glucose metabolism + digestive support, led by 200mg of cinnamon bark extract 10:1, with a broad digestive enzyme blend. Take one capsule before a higher-carb meal, as directed on the label.*",
+        "product": "cheat-shot-capsules",
+        "cta_label": "Shop Capsules →",
+        "fallback_asset": "bottle-tall.webp",
+        "background": "#FBF7EC"
+      }
+    },
+    "powder": {
+      "type": "ingredient-list",
+      "blocks": {
+        "magnesium": {
+          "type": "ingredient",
+          "settings": {
+            "emoji": "🧲",
+            "name": "Magnesium",
+            "dose": "75 mg",
+            "tagline": "18% DV, in a form that plays nice.",
+            "body": "As magnesium taurinate. An essential mineral that contributes to normal energy-yielding metabolism and normal muscle function.*",
+            "source": "Magnesium taurinate."
+          }
+        },
+        "chromium": {
+          "type": "ingredient",
+          "settings": {
+            "emoji": "⚡",
+            "name": "Chromium",
+            "dose": "500 mcg",
+            "tagline": "Same workhorse dose as the capsules.",
+            "body": "As chromium picolinate. A trace mineral that contributes to normal macronutrient metabolism.*",
+            "source": "Chromium picolinate."
+          }
+        },
+        "taurine": {
+          "type": "ingredient",
+          "settings": {
+            "emoji": "💧",
+            "name": "Taurine",
+            "dose": "2 g",
+            "tagline": "A full two grams, not a pinch.",
+            "body": "An amino acid found naturally in the body, included here at a full 2 gram serving as part of the powder's metabolic blend.*",
+            "source": "Free-form L-taurine."
+          }
+        },
+        "greentea": {
+          "type": "ingredient",
+          "settings": {
+            "emoji": "🍵",
+            "name": "Green Tea Leaf Extract",
+            "dose": "200 mg",
+            "tagline": "Standardized, not sprinkled.",
+            "body": "Camellia sinensis, standardized to 50% polyphenols — a well-studied source of antioxidant plant compounds.*",
+            "source": "Camellia sinensis leaf, 50% polyphenols."
+          }
+        },
+        "ala": {
+          "type": "ingredient",
+          "settings": {
+            "emoji": "🔁",
+            "name": "Alpha Lipoic Acid (ALA)",
+            "dose": "75 mg",
+            "tagline": "The antioxidant your cells already make.",
+            "body": "A compound the body produces naturally, included as part of the powder's antioxidant and metabolic support blend.*",
+            "source": "Alpha lipoic acid."
+          }
+        },
+        "glutathione": {
+          "type": "ingredient",
+          "settings": {
+            "emoji": "🛡️",
+            "name": "L-Glutathione (Reduced)",
+            "dose": "50 mg",
+            "tagline": "The master antioxidant.",
+            "body": "The reduced, bioavailable form of glutathione — the form the body can actually use.*",
+            "source": "Reduced L-glutathione."
+          }
+        },
+        "pterostilbene": {
+          "type": "ingredient",
+          "settings": {
+            "emoji": "🫐",
+            "name": "Pterostilbene",
+            "dose": "25 mg",
+            "tagline": "Blueberry polyphenol, concentrated.",
+            "body": "A polyphenol found naturally in blueberries, included for antioxidant and metabolic support.*",
+            "source": "Pterostilbene."
+          }
+        }
+      },
+      "block_order": ["magnesium", "chromium", "taurine", "greentea", "ala", "glutathione", "pterostilbene"],
+      "settings": {
+        "heading": "Cheat Shot Powder",
+        "intro": "The daily foundation. Metabolic + antioxidant support in a different formula from the capsules — a full 2g of taurine, plus chromium, magnesium, green tea, ALA, glutathione, and pterostilbene. 30 servings per container. Mix one dose into your drink daily, as directed on the label.*",
+        "other_ingredients": "Other ingredients: citric acid, natural flavors, sucralose, beet root powder (for natural color), silicon dioxide, beta carotene (for natural color).",
+        "product": "cheat-shot-powder-post-meal-recovery",
+        "cta_label": "Shop Powder →",
+        "fallback_asset": "powder-front.webp",
+        "background": "#F6F3EA"
+      }
+    },
+    "trust": {
+      "type": "trust-strip",
+      "settings": {
+        "heading": "Held to a higher standard.",
+        "body": "Every batch made in a GMP-certified facility in the USA. Third-party tested for purity and potency. No artificial colors, no stimulants, no proprietary blends.",
+        "badges": "GMP Certified, Third-Party Tested, Made in USA, No Proprietary Blends, No Artificial Colors",
+        "cta_label": "Try Cheat Shot →",
+        "disclaimer": "*These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease."
+      }
+    }
+  },
+  "order": ["hero", "capsules", "powder", "trust"]
+}

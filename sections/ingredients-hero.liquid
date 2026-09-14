@@ -1,0 +1,121 @@
+{%- comment -%}Ingredients hero — yellow, copy left, bottle right.{%- endcomment -%}
+<style>
+  #inghero-{{ section.id }} {
+    background: {{ section.settings.background }};
+    padding: clamp(44px, 5vw, 72px) 0;
+    overflow: hidden;
+  }
+
+  #inghero-{{ section.id }} .inghero__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(28px, 5vw, 64px);
+    align-items: center;
+  }
+
+  @media screen and (min-width: 750px) {
+    #inghero-{{ section.id }} .inghero__grid {
+      grid-template-columns: 1.1fr 0.9fr;
+      min-height: 390px;
+    }
+  }
+
+  #inghero-{{ section.id }} .inghero__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--ink);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border-radius: 999px;
+    margin-bottom: 16px;
+  }
+
+  #inghero-{{ section.id }} .inghero__title {
+    font-family: var(--font-display);
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: clamp(44px, 7vw, 84px);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    margin: 0 0 16px;
+  }
+
+  #inghero-{{ section.id }} .inghero__body {
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(26, 26, 26, 0.6);
+    max-width: 520px;
+    margin: 0;
+  }
+
+  #inghero-{{ section.id }} .inghero__media img {
+    width: 100%;
+    max-width: 360px;
+    max-height: 390px;
+    margin: 0 auto;
+    display: block;
+    object-fit: contain;
+  }
+
+  @media screen and (max-width: 749px) {
+    #inghero-{{ section.id }} {
+      padding: 40px 0 44px;
+    }
+
+    #inghero-{{ section.id }} .inghero__grid {
+      gap: 24px;
+    }
+
+    #inghero-{{ section.id }} .inghero__title {
+      font-size: clamp(42px, 14vw, 62px);
+    }
+
+    #inghero-{{ section.id }} .inghero__media img {
+      max-width: 230px;
+      max-height: 280px;
+    }
+  }
+</style>
+
+<section id="inghero-{{ section.id }}" aria-labelledby="inghero-h1-{{ section.id }}">
+  <div class="wrap">
+    <div class="inghero__grid">
+      <div>
+        {%- if section.settings.badge != blank -%}
+          <span class="inghero__badge">{{ section.settings.badge }}</span>
+        {%- endif -%}
+        <h1 class="inghero__title" id="inghero-h1-{{ section.id }}">{{ section.settings.heading | escape }}</h1>
+        <p class="inghero__body">{{ section.settings.body | escape }}</p>
+      </div>
+      <div class="inghero__media">
+        {%- if section.settings.image != blank -%}
+          {{ section.settings.image | image_url: width: 960 | image_tag: loading: 'eager', alt: section.settings.image_alt }}
+        {%- elsif section.settings.fallback_asset != blank -%}
+          <img src="{{ section.settings.fallback_asset | asset_url }}" alt="{{ section.settings.image_alt | escape }}" loading="eager" width="960" height="1280">
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Ingredients hero",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "badge", "label": "Badge", "default": "🔬 What's actually in it" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Cheat Shot Ingredients and Supplement Facts" },
+    { "type": "textarea", "id": "body", "label": "Body" },
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "text", "id": "fallback_asset", "label": "Fallback asset filename", "default": "ingredients-hero.webp" },
+    { "type": "text", "id": "image_alt", "label": "Image alt", "default": "Cheat Shot bottle showing supplement facts" },
+    { "type": "color", "id": "background", "label": "Background", "default": "#FFCC33" }
+  ],
+  "presets": [{ "name": "Ingredients hero" }]
+}
+{% endschema %}

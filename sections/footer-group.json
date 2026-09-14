@@ -1,0 +1,16 @@
+{
+  "name": "Footer",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "tagline": "Two formulas, two jobs. Powder every day for metabolic and antioxidant support; capsules for the higher-carb meals.*",
+        "contact_email": "info@cheatshot.com"
+      }
+    }
+  },
+  "order": ["footer"]
+}

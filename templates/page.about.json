@@ -1,0 +1,190 @@
+{
+  "sections": {
+    "hero": {
+      "type": "about-hero",
+      "settings": {
+        "badge": "THE TLDR VERSION",
+        "heading": "<p>What is<br>Cheat Shot?</p>",
+        "body": "<p>Two formulas with two jobs: a daily powder for metabolic and antioxidant support, and capsules for the higher-carb meals. That's it.*</p>",
+        "background": "#FFCC33"
+      }
+    },
+    "definition": {
+      "type": "about-definition",
+      "settings": {
+        "heading": "Two Formulas. Two Jobs.",
+        "body": "<p><strong>Cheat Shot is a two-formula system for healthy glucose metabolism.</strong> The powder is the daily foundation; the capsules are for higher-carb meal occasions.* It was created by certified personal trainer and nutrition specialist Joey Thurman, featured on WebMD, Good Morning America, and Men's Health.</p><p>Studied ingredients included at the doses used in published research — no proprietary blends, no fairy dust. The powder brings metabolic and antioxidant support with 2g of taurine every day; the capsules bring glucose metabolism and digestive support for when you eat that heavy meal.*</p>",
+        "badges": "GMP Certified, Third-Party Tested, Made in USA, No Stimulants",
+        "disclaimer": "*These statements have not been evaluated by the FDA.",
+        "card_1_icon": "⏱️",
+        "card_1_title": "15 minutes before",
+        "card_1_body": "Best taken about 15 minutes before a higher-carb meal, as directed on the label.*",
+        "card_2_icon": "🍽️",
+        "card_2_title": "With or after works too",
+        "card_2_body": "Forgot to take it early? Same dose with the meal or right after still supports glucose response and digestion.*",
+        "background": "#FFFFFF"
+      }
+    },
+    "shop_cta": {
+      "type": "shop-cta",
+      "settings": {
+        "heading": "Ready to take the shot?",
+        "cta_label": "Shop Cheat Shot →",
+        "background": "#EE2C22"
+      }
+    },
+    "built_for": {
+      "type": "built-for",
+      "blocks": {
+        "athlete": {
+          "type": "person",
+          "settings": {
+            "fallback_asset": "about-built-for-athlete.webp",
+            "label": "The athlete",
+            "body": "Trains hard, doesn't want carb-heavy refuels to wreck the rest of the day."
+          }
+        },
+        "professional": {
+          "type": "person",
+          "settings": {
+            "fallback_asset": "about-built-for-professional.webp",
+            "label": "The professional",
+            "body": "Working lunches, client dinners, conference catering. Eats out and stays sharp."
+          }
+        },
+        "parent": {
+          "type": "person",
+          "settings": {
+            "fallback_asset": "about-built-for-parent.webp",
+            "label": "The parent",
+            "body": "Kids' birthday cake, weekend pancakes, real life. Stays steady through it."
+          }
+        }
+      },
+      "block_order": ["athlete", "professional", "parent"],
+      "settings": {
+        "heading": "Built for the way you eat.",
+        "background": "#FFFFFF"
+      }
+    },
+    "lineup": {
+      "type": "lineup",
+      "blocks": {
+        "single": {
+          "type": "item",
+          "settings": {
+            "product": "cheat-shot-capsules",
+            "title": "Single Bottle",
+            "price": "$37.99",
+            "body": "30 doses. For the cheat meals.",
+            "cta_label": "Shop Single",
+            "fallback_asset": "bottle-front.webp",
+            "primary": false
+          }
+        },
+        "bundle": {
+          "type": "item",
+          "settings": {
+            "title": "Starter Bundle",
+            "price": "$64.99",
+            "body": "Capsules + Powder. Save $17.99 vs buying separately.",
+            "cta_label": "Shop Bundle",
+            "badge": "Best value",
+            "fallback_asset": "bundle-hero.webp",
+            "primary": true
+          }
+        },
+        "powder": {
+          "type": "item",
+          "settings": {
+            "product": "cheat-shot-powder-post-meal-recovery",
+            "title": "Powder",
+            "price": "$44.99",
+            "body": "30 daily doses. Your everyday foundation.",
+            "cta_label": "Shop Powder",
+            "fallback_asset": "powder-front.webp",
+            "primary": false
+          }
+        }
+      },
+      "block_order": ["single", "bundle", "powder"],
+      "settings": {
+        "heading": "The Lineup",
+        "background": "#FBF7EC"
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "q1": {
+          "type": "item",
+          "settings": {
+            "question": "What does Cheat Shot do?",
+            "answer": "<p>Two formulas, two jobs. The powder supports healthy glucose metabolism plus antioxidant status as part of your daily routine. The capsules support glucose metabolism and digestion around higher-carb meals.*</p>"
+          }
+        },
+        "q2": {
+          "type": "item",
+          "settings": {
+            "question": "How do I take Cheat Shot?",
+            "answer": "<p>Powder: mix one scoop into your drink daily as part of your routine. Capsules: take one about 15 minutes before a higher-carb meal — with or shortly after the meal also works.*</p>"
+          }
+        },
+        "q3": {
+          "type": "item",
+          "settings": {
+            "question": "Does Cheat Shot actually work?",
+            "answer": "<p>The key ingredients have been studied for their role in supporting healthy glucose metabolism.*</p>"
+          }
+        },
+        "q4": {
+          "type": "item",
+          "settings": {
+            "question": "What are the ingredients in Cheat Shot?",
+            "answer": "<p>The capsules and the powder are two different formulas. Capsules: Chromium Picolinate (500mcg), Cinnamon Bark Extract 10:1 (200mg), Banaba Leaf Extract (120mg), Gymnema Sylvestre (120mg), Bitter Melon Extract (100mg), Vanadium from Vanadyl Sulfate (50mg), and DigesSEB® enzyme blend (25mg). Powder: Magnesium (75mg), Chromium (500mcg), Taurine (2g), Green Tea Leaf Extract (200mg), Alpha Lipoic Acid (75mg), L-Glutathione, reduced (50mg), and Pterostilbene (25mg). No proprietary blends — every dose is listed on the label.</p>"
+          }
+        },
+        "q5": {
+          "type": "item",
+          "settings": {
+            "question": "Is Cheat Shot safe?",
+            "answer": "<p>Cheat Shot is GMP certified, third-party tested, and made in the USA. It contains no stimulants, no artificial colors, and no proprietary blends. As with any supplement, consult your doctor if you have a medical condition or take medication.</p>"
+          }
+        },
+        "q6": {
+          "type": "item",
+          "settings": {
+            "question": "How is Cheat Shot different from other glucose support supplements?",
+            "answer": "<p>Cheat Shot is two formulas with two jobs. The powder is the daily foundation — metabolic and antioxidant support built around a full 2g of taurine. The capsules are for higher-carb meal occasions — a cinnamon-led glucose metabolism blend plus a digestive enzyme layer. Foundation plus occasion, not step 1 and step 2 of the same meal. Every dose is on the label, with no proprietary blends.*</p>"
+          }
+        },
+        "q7": {
+          "type": "item",
+          "settings": {
+            "question": "Who created Cheat Shot?",
+            "answer": "<p>Joey Thurman — a certified personal trainer, nutrition specialist, and bestselling author of The Minimum Method. He's been a fitness expert for WebMD and has appeared on Good Morning America. He created Cheat Shot because he was tired of underdosed supplements wrapped in guilt-trip branding.</p>"
+          }
+        }
+      },
+      "block_order": ["q1", "q2", "q3", "q4", "q5", "q6", "q7"],
+      "settings": {
+        "eyebrow": "Common questions",
+        "heading": "The stuff people actually ask before buying.",
+        "exclusive": true,
+        "background": "#FFFFFF"
+      }
+    },
+    "founder": {
+      "type": "founder",
+      "settings": {
+        "fallback_asset": "joey-thurman.webp",
+        "image_alt": "Joey Thurman",
+        "eyebrow": "Not a celebrity. An actual expert.",
+        "heading": "Built from scratch",
+        "body": "<p>Joey Thurman is a certified trainer, nutrition specialist, and the guy WebMD calls when they need an actual answer. He wrote The Minimum Method. His whole thesis: stop making health harder than it needs to be.</p><p>He made Cheat Shot because he was tired of supplements dosed too low to do anything, wrapped in branding that made you feel like you had to earn the right to eat a burger. You don't.</p>",
+        "cta_label": "Try It →"
+      }
+    }
+  },
+  "order": ["hero", "definition", "shop_cta", "built_for", "lineup", "faq", "founder"]
+}

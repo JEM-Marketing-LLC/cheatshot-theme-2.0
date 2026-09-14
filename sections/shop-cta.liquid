@@ -1,0 +1,67 @@
+{%- comment -%}
+  Red closing CTA band — mirrors the live site's "Ready to take your shot?".
+{%- endcomment -%}
+
+<style>
+  #shopcta-{{ section.id }} {
+    background: {{ section.settings.background }};
+    padding: clamp(40px, 6vw, 72px) 0;
+    text-align: center;
+  }
+
+  #shopcta-{{ section.id }} .shopcta__title {
+    font-family: var(--font-display);
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: clamp(28px, 4vw, 44px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: #fff;
+    margin: 0 0 12px;
+  }
+
+  #shopcta-{{ section.id }} .shopcta__body {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 0 20px;
+  }
+
+  #shopcta-{{ section.id }} .shopcta__btn {
+    background: #fff;
+    color: var(--ink);
+  }
+
+  #shopcta-{{ section.id }} .shopcta__btn:hover {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--ink);
+  }
+</style>
+
+<section id="shopcta-{{ section.id }}" aria-labelledby="shopcta-heading-{{ section.id }}">
+  <div class="wrap" data-reveal>
+    <h2 class="shopcta__title" id="shopcta-heading-{{ section.id }}">{{ section.settings.heading }}</h2>
+    {%- if section.settings.body != blank -%}
+      <p class="shopcta__body">{{ section.settings.body }}</p>
+    {%- endif -%}
+    {%- if section.settings.cta_label != blank -%}
+      <a href="{{ section.settings.cta_link | default: routes.all_products_collection_url }}" class="btn shopcta__btn">
+        {{ section.settings.cta_label | escape }}
+      </a>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Shop CTA band",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Ready to take your shot?" },
+    { "type": "textarea", "id": "body", "label": "Body" },
+    { "type": "text", "id": "cta_label", "label": "Button label", "default": "Shop glucose support supplements →" },
+    { "type": "url", "id": "cta_link", "label": "Button link" },
+    { "type": "color", "id": "background", "label": "Background", "default": "#EE2C22" }
+  ],
+  "presets": [{ "name": "Shop CTA band" }]
+}
+{% endschema %}

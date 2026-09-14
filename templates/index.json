@@ -1,0 +1,102 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero-video",
+      "settings": {
+        "eyebrow": "Everyday support for balanced routines",
+        "heading": "Balanced doesn't mean perfect.",
+        "body": "Cheat Shot is a dietary supplement available in capsule and powder formats. It is formulated to support normal glucose metabolism and digestive comfort as part of a balanced diet and active lifestyle.*",
+        "show_disclaimer": true,
+        "cta_label": "Try Cheat Shot",
+        "video_mp4_url": "https://id-preview--39b760f2-1ea5-44d5-bd6f-ce4cc77f35bf.lovable.app/__l5e/assets-v1/4e11d4bd-39c3-4c20-ae56-02f95938c23b/hero-founder-v2.mp4",
+        "video_alt": "Cheat Shot founder explaining the ingredients",
+        "show_bottle": true,
+        "bottle_alt": "Cheat Shot capsules bottle",
+        "rating_value": "5.0",
+        "copy_background": "#FFCC33",
+        "heading_color": "#1A1A1A"
+      }
+    },
+    "roles": {
+      "type": "two-formulas",
+      "blocks": {
+        "powder": {
+          "type": "role",
+          "settings": {
+            "role": "Every day",
+            "name": "Powder",
+            "product": "cheat-shot-powder-post-meal-recovery",
+            "price": "$44.99",
+            "fallback_asset": "lifestyle-powder-shaker.webp",
+            "image_alt": "Cheat Shot powder mixed into a shaker as part of a daily routine",
+            "point_1": "Metabolic + antioxidant support",
+            "point_2": "2g taurine per serving",
+            "mindset": "\u201cI take this daily to support healthy glucose metabolism.\u201d",
+            "cta_label": "Shop the daily powder →",
+            "primary": true
+          }
+        },
+        "capsules": {
+          "type": "role",
+          "settings": {
+            "role": "Cheat meal",
+            "name": "Capsules",
+            "product": "cheat-shot-capsules",
+            "price": "$37.99",
+            "fallback_asset": "lifestyle-restaurant-pizza.webp",
+            "image_alt": "Friends sharing pizza at a restaurant table",
+            "point_1": "Glucose metabolism + digestive support",
+            "point_2": "200mg cinnamon bark extract 10:1",
+            "mindset": "\u201cI take this when I know a meal might leave me feeling bloated.\u201d",
+            "cta_label": "Shop the cheat meal capsules →",
+            "primary": false
+          }
+        }
+      },
+      "block_order": ["powder", "capsules"],
+      "settings": {
+        "eyebrow": "Two formulas. Two jobs.",
+        "heading": "Daily foundation + cheat meals.",
+        "body": "Cheat Shot is a dual-purpose dietary supplement system built to support healthy glucose metabolism. The powder is your foundation; taken daily, it supports healthy metabolic function and is rich in antioxidants. The capsules are designed to support your digestion when you need it most — think carb-heavy meals that usually leave you feeling heavy. Take each as directed on the label, as part of a balanced diet and active lifestyle.*",
+        "role_label": "Role",
+        "rule_text": "Healthy glucose metabolism",
+        "closing_body": "Daily Foundation + Cheat Meal Support — daily metabolic support and antioxidants, plus digestive support when you need it.*",
+        "closing_cta_label": "Get the Bundle — Save $17.99 vs Buying Separately",
+        "background": "#FFFFFF"
+      }
+    },
+    "ingredients_teaser": {
+      "type": "ingredients-teaser",
+      "blocks": {
+        "i1": {
+          "type": "ingredient",
+          "settings": { "name": "Chromium Picolinate", "dose": "500MCG" }
+        },
+        "i2": {
+          "type": "ingredient",
+          "settings": { "name": "Cinnamon Bark Extract", "dose": "200MG" }
+        },
+        "i3": {
+          "type": "ingredient",
+          "settings": { "name": "Banaba Leaf Extract", "dose": "120MG" }
+        }
+      },
+      "block_order": ["i1", "i2", "i3"],
+      "settings": {
+        "heading": "What's actually inside.",
+        "body": "No proprietary blends. Every amount on the label.",
+        "cta_label": "See every ingredient in both formulas →",
+        "background": "#FFCC33"
+      }
+    },
+    "shop_cta": {
+      "type": "shop-cta",
+      "settings": {
+        "heading": "Ready to take your shot?",
+        "cta_label": "Shop glucose support supplements →",
+        "background": "#EE2C22"
+      }
+    }
+  },
+  "order": ["hero", "roles", "ingredients_teaser", "shop_cta"]
+}
