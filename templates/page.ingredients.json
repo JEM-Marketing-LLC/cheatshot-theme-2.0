@@ -101,7 +101,15 @@
           }
         }
       },
-      "block_order": ["chromium", "cinnamon", "banaba", "gymnema", "bittermelon", "vanadium", "enzymes"],
+      "block_order": [
+        "chromium",
+        "cinnamon",
+        "banaba",
+        "gymnema",
+        "bittermelon",
+        "vanadium",
+        "enzymes"
+      ],
       "settings": {
         "heading": "Cheat Shot Capsules",
         "intro": "For cheat meal support. Glucose metabolism + digestive support, led by 200mg of cinnamon bark extract 10:1, with a broad digestive enzyme blend. Take one capsule before a higher-carb meal, as directed on the label.*",
@@ -192,12 +200,20 @@
           }
         }
       },
-      "block_order": ["magnesium", "chromium", "taurine", "greentea", "ala", "glutathione", "pterostilbene"],
+      "block_order": [
+        "magnesium",
+        "chromium",
+        "taurine",
+        "greentea",
+        "ala",
+        "glutathione",
+        "pterostilbene"
+      ],
       "settings": {
         "heading": "Cheat Shot Powder",
         "intro": "The daily foundation. Metabolic + antioxidant support in a different formula from the capsules — a full 2g of taurine, plus chromium, magnesium, green tea, ALA, glutathione, and pterostilbene. 30 servings per container. Mix one dose into your drink daily, as directed on the label.*",
         "other_ingredients": "Other ingredients: citric acid, natural flavors, sucralose, beet root powder (for natural color), silicon dioxide, beta carotene (for natural color).",
-        "product": "cheat-shot-powder-post-meal-recovery",
+        "product": "cheat-shot-powder",
         "cta_label": "Shop Powder →",
         "fallback_asset": "powder-front.webp",
         "background": "#F6F3EA"
@@ -214,5 +230,10 @@
       }
     }
   },
-  "order": ["hero", "capsules", "powder", "trust"]
+  "order": [
+    "hero",
+    "capsules",
+    "powder",
+    "trust"
+  ]
 }

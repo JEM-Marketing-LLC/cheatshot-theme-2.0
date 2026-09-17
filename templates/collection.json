@@ -47,7 +47,7 @@
         "powder": {
           "type": "item",
           "settings": {
-            "product": "cheat-shot-powder-post-meal-recovery",
+            "product": "cheat-shot-powder",
             "title": "Powder",
             "price": "$44.99",
             "body": "30 daily doses. Your everyday foundation.",
@@ -57,7 +57,11 @@
           }
         }
       },
-      "block_order": ["single", "bundle", "powder"],
+      "block_order": [
+        "single",
+        "bundle",
+        "powder"
+      ],
       "settings": {
         "heading": "The Lineup",
         "background": "#FBF7EC"
@@ -68,18 +72,31 @@
       "blocks": {
         "i1": {
           "type": "ingredient",
-          "settings": { "name": "Chromium Picolinate", "dose": "500MCG" }
+          "settings": {
+            "name": "Chromium Picolinate",
+            "dose": "500MCG"
+          }
         },
         "i2": {
           "type": "ingredient",
-          "settings": { "name": "Cinnamon Bark Extract", "dose": "200MG" }
+          "settings": {
+            "name": "Cinnamon Bark Extract",
+            "dose": "200MG"
+          }
         },
         "i3": {
           "type": "ingredient",
-          "settings": { "name": "Banaba Leaf Extract", "dose": "120MG" }
+          "settings": {
+            "name": "Banaba Leaf Extract",
+            "dose": "120MG"
+          }
         }
       },
-      "block_order": ["i1", "i2", "i3"],
+      "block_order": [
+        "i1",
+        "i2",
+        "i3"
+      ],
       "settings": {
         "heading": "What's actually inside.",
         "body": "No proprietary blends. Every amount on the label.",
@@ -112,7 +129,11 @@
           }
         }
       },
-      "block_order": ["q1", "q2", "q3"],
+      "block_order": [
+        "q1",
+        "q2",
+        "q3"
+      ],
       "settings": {
         "eyebrow": "Questions",
         "heading": "Choosing a formula.",
@@ -129,5 +150,11 @@
       }
     }
   },
-  "order": ["main", "lineup", "ingredients_teaser", "faq", "shop_cta"]
+  "order": [
+    "main",
+    "lineup",
+    "ingredients_teaser",
+    "faq",
+    "shop_cta"
+  ]
 }

@@ -34,13 +34,13 @@
           "settings": {
             "role": "Every day",
             "name": "Powder",
-            "product": "cheat-shot-powder-post-meal-recovery",
+            "product": "cheat-shot-powder",
             "price": "$44.99",
             "fallback_asset": "lifestyle-powder-shaker.webp",
             "image_alt": "Cheat Shot powder mixed into a shaker as part of a daily routine",
             "point_1": "Metabolic + antioxidant support",
             "point_2": "2g taurine per serving",
-            "mindset": "\u201cI take this daily to support healthy glucose metabolism.\u201d",
+            "mindset": "“I take this daily to support healthy glucose metabolism.”",
             "cta_label": "Shop the daily powder →",
             "primary": true
           }
@@ -56,13 +56,16 @@
             "image_alt": "Friends sharing pizza at a restaurant table",
             "point_1": "Glucose metabolism + digestive support",
             "point_2": "200mg cinnamon bark extract 10:1",
-            "mindset": "\u201cI take this when I know a meal might leave me feeling bloated.\u201d",
+            "mindset": "“I take this when I know a meal might leave me feeling bloated.”",
             "cta_label": "Shop the cheat meal capsules →",
             "primary": false
           }
         }
       },
-      "block_order": ["powder", "capsules"],
+      "block_order": [
+        "powder",
+        "capsules"
+      ],
       "settings": {
         "eyebrow": "Two formulas. Two jobs.",
         "heading": "Daily foundation + cheat meals.",
@@ -79,18 +82,31 @@
       "blocks": {
         "i1": {
           "type": "ingredient",
-          "settings": { "name": "Chromium Picolinate", "dose": "500MCG" }
+          "settings": {
+            "name": "Chromium Picolinate",
+            "dose": "500MCG"
+          }
         },
         "i2": {
           "type": "ingredient",
-          "settings": { "name": "Cinnamon Bark Extract", "dose": "200MG" }
+          "settings": {
+            "name": "Cinnamon Bark Extract",
+            "dose": "200MG"
+          }
         },
         "i3": {
           "type": "ingredient",
-          "settings": { "name": "Banaba Leaf Extract", "dose": "120MG" }
+          "settings": {
+            "name": "Banaba Leaf Extract",
+            "dose": "120MG"
+          }
         }
       },
-      "block_order": ["i1", "i2", "i3"],
+      "block_order": [
+        "i1",
+        "i2",
+        "i3"
+      ],
       "settings": {
         "heading": "What's actually inside.",
         "body": "No proprietary blends. Every amount on the label.",
@@ -107,5 +123,10 @@
       }
     }
   },
-  "order": ["hero", "roles", "ingredients_teaser", "shop_cta"]
+  "order": [
+    "hero",
+    "roles",
+    "ingredients_teaser",
+    "shop_cta"
+  ]
 }

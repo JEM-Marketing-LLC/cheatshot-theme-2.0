@@ -70,7 +70,11 @@
           }
         }
       },
-      "block_order": ["athlete", "professional", "parent"],
+      "block_order": [
+        "athlete",
+        "professional",
+        "parent"
+      ],
       "settings": {
         "heading": "Built for the way you eat.",
         "background": "#FFFFFF"
@@ -106,7 +110,7 @@
         "powder": {
           "type": "item",
           "settings": {
-            "product": "cheat-shot-powder-post-meal-recovery",
+            "product": "cheat-shot-powder",
             "title": "Powder",
             "price": "$44.99",
             "body": "30 daily doses. Your everyday foundation.",
@@ -116,7 +120,11 @@
           }
         }
       },
-      "block_order": ["single", "bundle", "powder"],
+      "block_order": [
+        "single",
+        "bundle",
+        "powder"
+      ],
       "settings": {
         "heading": "The Lineup",
         "background": "#FBF7EC"
@@ -175,7 +183,15 @@
           }
         }
       },
-      "block_order": ["q1", "q2", "q3", "q4", "q5", "q6", "q7"],
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6",
+        "q7"
+      ],
       "settings": {
         "eyebrow": "Common questions",
         "heading": "The stuff people actually ask before buying.",
@@ -195,5 +211,13 @@
       }
     }
   },
-  "order": ["hero", "definition", "shop_cta", "built_for", "lineup", "faq", "founder"]
+  "order": [
+    "hero",
+    "definition",
+    "shop_cta",
+    "built_for",
+    "lineup",
+    "faq",
+    "founder"
+  ]
 }
